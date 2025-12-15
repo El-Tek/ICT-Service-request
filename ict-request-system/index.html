@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kumasi Technical University - ICT Requests</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="landing">
+  <div class="overlay"></div>
+  <header class="header">
+    <img src="assets/logo.jpg" alt="KsTU Logo" class="logo"/>
+    <h1>Kumasi Technical University<br><span>ICT Request Management</span></h1>
+    <p class="tagline">Fast, simple, and trackable support for staff & departments.</p>
+    <a class="btn primary" href="home.html">Submit a Request</a>
+  </header>
+  <footer class="footer small">
+    &copy; <span id="year"></span> KsTU ICT Directorate · <a href="admin/login.php">Admin</a>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

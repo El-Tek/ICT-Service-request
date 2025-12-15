@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You | KsTU ICT</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main class="container card center">
+    <h2>Thank you! 🎉</h2>
+    <p>Your request has been received.</p>
+    <p><strong>Ticket ID:</strong> <span id="ticket">—</span></p>
+    <a class="btn primary" href="home.html">Submit another request</a>
+    <a class="btn" href="index.html">Back to home</a>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('ticket').textContent = params.get('ticket') || 'N/A';
+  </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit ICT Request | KsTU</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <nav class="topbar">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.jpg" class="logo small" alt="KsTU"> ICT Request Desk
+    </a>
+  </nav>
+
+  <main class="container card">
+    <h2>Submit a Request</h2>
+    <p class="muted">Fields marked * are required.</p>
+
+    <form action="submit_request.php" method="post" enctype="multipart/form-data" class="grid">
+      <div class="field">
+        <label for="fullname">Full name *</label>
+        <input type="text" id="fullname" name="fullname" required maxlength="100">
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone *</label>
+        <input type="tel" id="phone" name="phone" required maxlength="20" pattern="[0-9+()\-\s]{7,20}">
+      </div>
+
+      <div class="field">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required maxlength="100">
+      </div>
+
+      <div class="field">
+        <label for="office">Office / Department *</label>
+        <input type="text" id="office" name="office" required maxlength="100">
+      </div>
+
+      <div class="field">
+        <label for="request_type">Request Type *</label>
+        <select id="request_type" name="request_type" required>
+          <option value="">Select...</option>
+          <option>Network Issue</option>
+          <option>Software Installation</option>
+          <option>Hardware Repair</option>
+          <option>Email / Account</option>
+          <option>Website / Portal</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="priority">Priority *</label>
+        <select id="priority" name="priority" required>
+          <option>Normal</option>
+          <option>High</option>
+          <option>Urgent</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="service_time">Preferred Service Time</label>
+        <input type="text" id="service_time" name="service_time" placeholder="e.g., Weekdays 9am–12pm">
+      </div>
+
+      <div class="field full">
+        <label for="request_text">Description *</label>
+        <textarea id="request_text" name="request_text" rows="6" required placeholder="Describe your issue or request in detail..."></textarea>
+      </div>
+
+      <div class="field full">
+        <label for="attachment">Attachment (PDF/DOC/DOCX/JPG/PNG ≤ 5MB)</label>
+        <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn primary">Submit Request</button>
+        <a href="index.html" class="btn">Cancel</a>
+      </div>
+    </form>
+  </main>
+
+  <footer class="footer small">
+    &copy; <span id="year"></span> KsTU ICT Directorate
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
